@@ -776,6 +776,10 @@ Fair enough, but those \[H[sup]+[/sup]\] numbers look too impractical to work wi
   [/ul]
 [/div]
 
+[div style:`{textAlign:'left', fontSize:'1.1rem'}`]
+[a href:"https://aquacalc.github.io/ph_ch1/"]Go to Part I: Just the Basics[/a]
+[/div]
+
 [hr className:'section-hr' id:'ph-and-beyond' /]
 
 [Inline] [h4 style:`{display: 'inline', marginRight: '30px', marginBottom: '0px', paddingBottom:'0px'}` id:"refs"] [/h4] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
