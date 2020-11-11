@@ -1,0 +1,783 @@
+[meta title:"WQ ToolBox - pH Part 2" description:"" /]
+
+
+// #### *"Water, water everywhere..."*
+// [Header
+//   fullWidth:true
+//   title:"WQ ToolBox Manual"
+//   subtitle:"pH II: Quick-o Water Chem Primer"
+//   authorLink:""
+//   date:``
+//   background:"url('static/images/h2o.jpg')"
+//   color:"navy"
+//    /]
+
+[Header
+  fullWidth:true
+  title:"WQ ToolBox Manual"
+  subtitle:"pH II: Quick-o Water Chem Primer"
+  authorLink:"aquacalc@gmail.com"
+  date:`(new Date()).toDateString()`
+  background:"url('static/images/Buza-2.png')"
+  color:"white"
+   /]
+
+[p style: `{fontSize: '0.90rem'}` ]
+ *This document was developed with* [a href:"https://idyll-lang.org/"]Idyll[/a], *a "toolkit for creating data-driven stories 
+ and explorable explanations". Custom components were built with* [a href:"https://reactjs.org/"]React[/a] *and*  [a href:"https://d3js.org/"]D3[/a].
+[/p]
+
+[p style:`{textAlign:'right'}`]
+  contact [a href:'mailto: aquacalc@gmail.com']aquacalc@gmail.com[/a]
+[/p]
+
+    // [p style:`{textAlign:'right', paddingTop:'0px', marginTop:'0px', fontSize:'small'}`]
+    // *H[sub]2[/sub]O* image by [a href:"https://pixabay.com/users/publicdomainpictures-14/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=316625"]PublicDomainPictures[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=316625"]Pixabay[/a]
+    // [/p]
+
+// ((((((((( More than Just the Basics )))))))))
+// [div style:`{textAlign:'center', marginBottom:'15px'}`]
+// [Inline] [h2 style:`{display: 'inline', marginRight: '30px'}` id:"goals-toc-2"]*A Quick-o Chem Primer*[/h2] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+// [/div]
+
+
+[div style:`{background: '#F5F5DC', borderRadius: '15px', padding: '15px', textAlign:'center', marginTop:'0px', paddingTop:'2px', marginBottom:'18px'}`]
+[h3 id:"top"]Table of Contents[/h3]
+[ul style:`{listStyleType:'none', marginTop:'0px'}`]
+
+// [var name:"showContent_toc_2" value:true /]
+// [div]
+// [Button className: 'showToc' onClick:`showContent_toc_2 = !showContent_toc_2` ]
+//   [Display value:`showContent_toc_2 ? 'Close A Quick-o Chem Primer' : 'A Quick-o Chem Primer' ` /]
+// [/Button]
+// [Conditional if:`showContent_toc_2`]
+//   [li][/li]
+  [ul className: 'ulToc']
+    [li] [a href:"#section-goals"]Section Goals[/a] [/li]
+    [li] [a href:"#section-intro-2"]Section Intro[/a] [/li]
+    [li] [a href:"#dissociate-ions"]Dissociation into ions[/a] [/li]
+    [li] [a href:"#dynamic-equilibriun"]Dynamic ⇆ equilibrium[/a] [/li]
+    [li] [a href:"#dissociation-constant"]K[sub]w[/sub]: Water’s dissociation constant[/a] [/li]
+    [li] [a href:"#simplified-kw"]The simplified K[sub]w[/sub] expression[/a] [/li]
+    [li] [a href:"#getting-h-plus"]Getting a value for \[H[sup]+[/sup]\][/a] [/li]
+    [li] [a href:"#getting-kw"]Getting values for K[sub]w[/sub][/a] [/li]
+    [li] [a href:"#refs"]Refs[/a] [/li]
+  [/ul]
+//   [/Conditional]
+// [/div]
+
+[/ul]
+[/div]
+
+[div className: 'section-preface']
+  [div style:`{textAlign:'center', marginTop:'15px'}`]
+  [Inline] [h2 style:`{display: 'inline', marginRight: '30px'}` id:"section-goals"]*Quick-o Chem Primer*[/h2] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+  [/div]
+
+  // [h4]Section Goals[/h4]
+
+  [ul]
+    [li] become familiar with **water's dissociation** into H[sub]3[/sub]O[sup]+[/sup] & OH[sup]-[/sup] [/li]
+    [li] describe **dynamic equilibrium** and give an example [/li]
+    [li] write the expression for water's **equilibrium constant** [/li]
+    [li] understand how water's **equilibrium constant relates to pH** [/li]
+    [li] develop a vocabulary of common **water chemistry terms** [/li]
+    [li] describe how **concentration & activity** relate to popcorn [/li]
+    [li] explain what a **mole** is and why we use it [/li]
+  [/ul]
+[/div]
+
+
+// ((((((((( INTRO )))))))))
+[div style:`{marginTop:'15px'}` ]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"section-intro-2"]*Section Intro*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[p]
+A better understanding of pH starts with the behavior of water molecules.
+[/p]
+
+[p]
+Each is made of two hydrogen atoms bound to one oxygen atom and is symbolized by the familiar formula H[sub]2[/sub]O.
+[/p]
+
+[p]
+The following discussion deals with pure water -- no dissolved solids, no dissolved gasses, no fish, no shrimp, no plants...*only* H[sub]2[/sub]O, the 
+foundation of water-quality management. (Salinity effects are mentioned in a few places below, but that topic and the others are taken up in other sections.)
+[/p]
+
+// ### *Dissociation into ions*
+
+// ((((((((( Dissociation into Ions )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"dissociate-ions"]*Dissociation into Ions*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[aside]
+[Inline]Charged chemical species -- like H[sub]3[/sub]O[sup]+[/sup] and OH[sup]-[/sup] -- are *ions*. Ions with a positive charge are ***cations***; 
+those with a negative charge are ***anions***.[/Inline]
+[/aside]
+
+[p]
+Two water molecules react to yield one H[sub]3[/sub]O[sup]+[/sup] and one OH[sup]-[/sup]:
+[/p]
+
+[Equation display:true]
+  H_2O + H_2O \leftrightarrows {H_3O^+} + {OH^-}
+[/Equation]
+
+[p]
+H[sub]3[/sub]O[sup]+[/sup] is a ***hydronium*** ion (also called a *hydroxonium* or *oxonium* ion). OH[sup]-[/sup] is a ***hydroxide*** ion.
+[/p]
+
+[aside]
+[Inline]
+The hydrogen atom, H, has one proton and one electron. After the negatively charged electron has been stripped 
+off, all that remains is the positively charged ***proton***.
+[/Inline]
+[/aside]
+
+[p]
+For our purposes, no important details are lost by representing  H[sub]3[/sub]O[sup]+[/sup] as H[sup]+[/sup] (a *hydron* or, more commonly, a ***proton***).
+[/p]
+
+[p]
+This simplifies the reaction to
+[/p]
+
+[Equation display:true]
+  H_2O \leftrightarrows {H^+} + {OH^-}
+[/Equation]
+
+[p style:`{fontSize: "0.78rem"}`]
+\[FYI, this is only for notational convenience: No bare protons are swimming around in solution. For that matter, even single hydronium ions quickly react 
+with others to form hydrate complexes.\]
+[/p]
+
+// ((((((((( Dynamic ⇆ equilibrium )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"dynamic-equilibriun"]*Dynamic ⇆ equilibrium*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[p]
+The double arrows ([Equation display:false]\leftrightarrows[/Equation]) indicate that the reaction is reversible: water molecules dissociate to 
+produce ions and ions combine to form water molecules.
+[/p]
+
+[p style:`{marginBottom: '8px'}`]
+When temperature is constant, the reaction reaches a ***dynamic equilibrium***: 
+[/p]
+
+[ul]
+[li]***dynamic*** (as opposed to static), because the reaction doesn't stop -- water molecules still break up, driving the reaction to the right, 
+while ions still combine, driving the reaction to the left[/li]
+// [p]and[/p]
+[li]***equilibrium*** (or *steady state*), because the reaction rates are constant -- and that means that the concentration of each component is constant[/li]
+[/ul]
+
+
+// ((((((((( Water's dissociation constant )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"dissociation-constant"]*K[sub]w[/sub]: Water's dissociation constant*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[aside]
+Before defining pH, we need a short detour to equilibrium constants.
+[/aside]
+
+[p]
+An equilibrium constant is the ratio of the products of a chemical reaction to the reactants *after the reaction has reached dynamic equilibrium*.
+[/p]
+
+[p]
+In the general case, if reactants A and B combine to produce C and D
+[/p]
+
+[Equation display:true]
+  \color{blue}A + \color{blue}B \leftrightarrows \color{green}C + \color{green}D
+[/Equation]
+
+[p]
+then the equilibrium constant K is
+[/p]
+
+[Equation display:true]
+  K = \dfrac{\color{green}\lbrace{C}\rbrace\color{green}\lbrace{D}\rbrace}{\color{blue}\lbrace{A}\rbrace\color{blue}\lbrace{B}\rbrace}
+[/Equation]
+
+[p]
+In our case, the reaction is
+[/p]
+
+[Equation display:true]
+  H_2O \leftrightarrows {H^+} + {OH^-}
+[/Equation]
+
+[p]
+so K[sub]w[/sub], the equilibrium constant of water (or its *dissociation* constant) 
+is the ratio of the ions produced, H[sup]+[/sup] and OH[sup]-[/sup], to the sole reactant, H[sub]2[/sub]O
+[/p]
+
+[Equation display:true]
+  K_w = \dfrac{\lbrace{H^+}\rbrace\lbrace{OH^-}\rbrace}{\lbrace{H_2O}\rbrace}
+[/Equation]
+
+[p]
+The braces ({}) are one way to represent ***activity*** or ***effective concentration***.
+[/p]
+
+[aside]
+[Inline]
+The difference between ***activity*** and ***concentration*** is explained enough for our purposes in the panel below.
+[/Inline]
+[/aside]
+
+[p]
+In chemistry, activity is not the same as concentration. Two simplifications will take us quickly from generally unfamiliar activity to familiar concentration.
+[/p]
+
+[p]
+First, the activity of water is given as 1.0, so we can simplify the formula as
+[/p]
+
+[Equation display:true]
+  K_w = \dfrac{\lbrace{H^+}\rbrace\lbrace{OH^-}\rbrace}{\color{red}\lbrace{H_2O}\rbrace} = \dfrac{\lbrace{H^+}\rbrace\lbrace{OH^-}\rbrace}{\color{red}1} = \lbrace{H^+}\rbrace\lbrace{OH^-}\rbrace
+[/Equation]
+
+[p]
+Next, the difference between activity and concentration generally is small enough in dilute solutions -- those in which we're interested -- that we 
+can use concentration without introducting unacceptable error. This leads to
+[/p]
+
+[Equation display:true]
+  K_w = \lbrace{H^+}\rbrace\lbrace{OH^-}\rbrace \approx {[H^+][OH^-]}
+[/Equation]
+
+[p]
+The "wavy equals sign", [Equation display:false]\approx[/Equation], means "approximately equals".
+[/p]
+
+// ********************** //
+// ****** ACTIVITY ****** //
+// ********************** //
+
+[p id:"close-popcorn"][/p]
+
+[var name:"showContent_activity" value:false /]
+
+[Button className: 'showHideBtn' onClick:`showContent_activity = !showContent_activity` ]
+  [Display value:`showContent_activity ? 'Hide Content' : 'Activity, concentration, & popcorn' ` /]
+[/Button]
+
+[Conditional if:`showContent_activity`]
+
+[div className:"dynamic-module" ]
+
+// ####_Activity, Concentration, and Popcorn_
+
+[h4 style:`{marginBottom:'2px'}`]A popcorn analogy[/h4]
+
+[div style:`{marginTop:'15px', marginBottom:'20px'}` ]
+// [div style:`{marginLeft:'90px', display:'flex', justifyContent:'center', marginTop:'15px', marginBottom:'20px', width:'70%'}` ]
+![kernelsToPopped](static/images/kernelsToPopped.png)
+[/div]
+
+[p]A new bag of microwave popcorn might contain 750 un-popped kernels.[/p]
+
+[p]Heat that bag in the microwave and, in the ideal case, all 750 kernels will pop. If they do, then we can say that the ***concentration*** of popcorn is 750/bag.[/p]
+
+[p]But in the real world, maybe only 700 pop. If so, then the ***effective concentration*** of popcorn is lower: only 700/bag.[/p]
+
+[p]Chemistry makes a similar distinction for dissolved substances.[/p]
+
+[h4 style:`{marginBottom:'2px'}`]Concentration in the chemical sense[/h4]
+
+
+[div style:`{marginLeft:'90px', marginTop:'15px', marginBottom:'20px', width:'70%'}` ]
+![concentration](static/images/concentration.jpg)
+[/div]
+
+[p style:`{textAlign:'right', marginTop:'3px', fontSize:'small'}`]
+Image by [a href:"https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4251037"]Gerd Altmann[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4251037"]Pixabay[/a]
+[/p]
+
+[p]
+We're all familiar with *concentration*: Measure a quantity of a substance (maybe 5.0 g), dissolve it in a volume of a solvent (*e.g.*, 2 L of water), 
+and then divide the added amount by the volume -- 5.0 g divided by 2L, or 2.5 g/L.
+[/p]
+
+[p]
+That's such a simple, straighforward procedure that it's natural to wonder why we'd need any other concept.
+[/p]
+
+[p]
+The key is that concentration, as the term is used in Chemistry, doesn't account for interactions that the substance has with the solvent (water, in our 
+case) and any other dissolved solids in the solution.
+[/p]
+
+[p]
+Concentration thus represents the ideal case -- like expecting all the popcorn to pop.
+[/p]
+
+[h4 style:`{marginBottom:'2px'}`]Activity in the chemical sense[/h4]
+
+[p]
+Activity -- or effective concentration -- *does* take those interactions into account. It thus represents the more complicated non-ideal case that 
+describes how dissolved substances really behave in solution.
+[/p]
+
+[p]
+The interactions in question commonly involve ion-ion pairing: *i.e.*, a certain fraction of the ions from the dissolved substance react with other ions in 
+the solution instead of remaining free (as we expect in the ideal case). This makes it appear that the solution is less concentrated than expected based on 
+the amount of substance added.
+[/p]
+
+[p]
+Using the example above, imagine that 8% of the dissolved ions from the added 2.5 g/L interact in some way with other ions already 
+in solution. That 8% then is the popcorn that *didn't* pop.
+[/p]
+
+[p]
+The rest of the added substance -- 92% of 2.5, or 2.3 g/L -- is the effective concentration or activity. That lesser amount is the popcorn that *did* pop.
+[/p]
+
+// #### The bottomline
+[h4 style:`{marginBottom:'2px'}`]The bottomline[/h4]
+
+[p]
+Just like the real number of popped kernels *is less than* the total number of kernels added to the bag, so the activity of a dissolved substance 
+*is less than* the amount of substance added to the solution.
+[/p]
+
+[p]
+Concentration is close enough to activity in dilute solutions of the type we run in aquaculture, aquaponics, pool, hydroponics, and aquarium work that we generally 
+can use concentration without unacceptable loss of accuracy or precision.
+[/p]
+
+[p style:`{marginBottom:'3px'}`]
+We still need to be aware that the chemical properties of real solutions are better described by activity than by concentration, and that activity is...
+[/p]
+
+  [ul]
+    [li] ...more important in concentrated solutions [/li]
+    [li] ...more important in solutions with high ionic strength (like seawater) [/li]
+    [li] ...essential for any precise chemical work [/li]
+  [/ul]
+
+[p]
+We'll mention activity again when we define pH because pH strictly is defined in terms of activity, not concentration; and we go into a bit more detail 
+farther along when we discuss pH scales and measuring pH in seawater. 
+[/p]
+
+[p]
+[span style:`{fontSize: "0.78rem"}`]
+\[FYI, a similar distinction is made with gasses: *partial pressure* represents the ideal case; *fugacity* (effective partial pressure), 
+the non-ideal case. For our purposes, we're usually good-to-go using partial pressure.\]
+[/span]
+[/p]
+
+[div style: `{textAlign: 'center'}` ]
+[a className:"closePanelBtn" href:"#close-popcorn" onClick:`showContent_activity = false` ]Close Content[/a]
+[/div]
+
+[/div]
+
+[/Conditional]
+
+
+// ((((((((( Water's dissociation constant )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"simplified-kw"]*The simplified K[sub]w[/sub] expression*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[aside][Inline]K[sub]w[/sub] also is called the ***ion product*** of water in some tech literature.[/Inline][/aside]
+
+[p]
+After those simplifications, the dissociation constant of water is
+[/p]
+
+[Equation display:true]
+  K_w = {[H^+][OH^-]}
+[/Equation]
+
+[p]
+The brackets (\[\]) denote concentration in moles per kg of water (***mol/kg*** or [span style:`{fontWeight: 'bold'}` ][i]m[/i][/span], termed *molality*) or moles per liter of water 
+(***mol/L*** or [span style:`{fontWeight: 'bold'}` ][i]M[/i][/span], called molarity).
+[/p]
+
+[p style:`{fontSize: "0.78rem"}`]
+\[FYI, oceanographers simplify certain analyses by using *per kg* instead of *per liter* because a mass of water (in kg) doesn't change with 
+temperature or pressure while its volume (*e.g.* in liters) does.\]
+[/p]
+
+[p]
+It's important to be comfortable with the concept of moles because you'll encounter it very frequently in water quality work.
+[/p]
+
+[p]
+As explained in the following panel, a *mole* is a measure of abundance; it's the number of "things" in a collection. Just like one 
+*dozen* refers to a collection of 12 things, one mole refers to a collection of a very, very, very large number of things.
+[/p]
+
+// ********************* //
+// ******* MOLES ******* //
+// ********************* //
+
+[p id:"close-moles"][/p]
+
+[var name:"showContent_moles" value:false /]
+
+[Button className: 'showHideBtn' onClick:`showContent_moles = !showContent_moles` ]
+  [Display value:`showContent_moles ? 'Hide Content' : 'A cup of coffee...and a mole of donuts' ` /]
+[/Button]
+
+[Conditional if:`showContent_moles`]
+
+[div className:"dynamic-module" ]
+
+// ####_More mountain than a mole hill_
+[div style:`{marginLeft: '60px', marginBottom: '25px', width: '80%'}` ]
+![Mole](static/images/mole.jpg)
+[/div]
+
+[p style:`{textAlign:'right', marginTop:'3px', fontSize:'small'}`]
+Image by [a href:"https://pixabay.com/users/beeki-2666/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=13299"]Dirk (Beeki®) Schumacher[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=13299"]Pixabay[/a]
+[/p]
+
+#### Why do we need moles?
+[p]
+Chemical reactions describe how substances interact in terms of their numbers.
+[/p]
+
+[p]
+For example, ***one*** molecule of sodium carbonate dissolved in water produces ***two*** sodium ions and ***one*** carbonate ion:
+[/p]
+
+[Equation display:true]
+  Na_2CO_3 \leftrightarrows {2Na^+} + {CO_3^{-2}}
+[/Equation]
+
+[p]
+Similarly, ***one*** molecule of H[sub]2[/sub]O produces ***one*** H[sup]+[/sup] and ***one*** OH[sup]-[/sup]:
+[/p]
+
+[Equation display:true]
+  H_2O \leftrightarrows {H^+} + {OH^-}
+[/Equation]
+
+[p]
+And ***five dozen*** H[sub]2[/sub]O molecules produce ***five dozen*** H[sup]+[/sup] and ***five dozen*** OH[sup]-[/sup].
+[/p]
+
+[p]
+But molecules and ions are so physically small that such small quantities aren't practical in water-quality management.
+[/p]
+
+[p]
+To adjust pH in a pool or alkalinity in a hydroponics tank, we need to work with much larger amounts.
+[/p]
+
+[p]
+A *mole* is such an amount.
+[/p]
+
+[div className: "mySubHeading" ]6.02214076 x 10[sup]23[/sup]...things[/div]
+
+[p]
+A *pair* is a collection of two; a *dozen*, 12; the archaic *score* ("...four score and seven years ago..."), 20; a *ream* (of paper), 500. A mole is also a  
+collection -- a collection of...
+[/p]
+
+[p style:`{textAlign: 'center', fontSize: '1.2rem'}` ]
+602,214,076,000,000,000,000,000
+[/p]
+
+[p]
+In words:
+[/p]
+
+[p style:`{textAlign: 'center', fontSize: '0.95rem'}` ]
+six hundred two sextillion, two hundred fourteen quintillion, seventy-six quadrillion
+[/p]
+
+[p]
+And written compactly in scientific notation:
+[/p]
+
+[p style:`{textAlign: 'center', fontSize: '0.95rem'}` ]
+[Inline]6.02214076 x 10[sup]23[/sup][/Inline]
+[/p]
+
+#### How big is really big?
+[p]
+A mole is too big of a number to grasp; it's just well outside the realm of our experience. Intro Chem classes approach this matter in fanciful ways.
+[/p]
+
+[p style:`{margin:'0px', padding:'0px', fontSize:'0px'}`][/p]
+
+[div style:`{marginLeft: '90px', marginBottom: '25px', width: '70%'}` ]
+![Donuts](static/images/donuts.jpg)
+[/div]
+
+[p style:`{textAlign:'right', marginTop:'3px', fontSize:'small'}`]
+Image by [a href:"https://pixabay.com/users/lawjr-4448871/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=40937011"]Larry White[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4093701"]Pixabay[/a]
+[/p]
+
+[p style:`{margin:'0px', padding:'0px', fontSize:'0px'}`][/p]
+
+[ul]
+[li]one mole of donuts would cover the Earth to a depth of about 8 km (5 miles)[/li]
+[li]a human contains an average of ~3.72 x 10[sup]13[/sup] cells [Cite 
+  authors: "E. Bianconi, Piovesan, A., Facchin, F., Beraudi, A. Casadei, R., Frabetti, F., Vitale, L., Pelleri, M.C., Tassani, S., Piva, F., Perez-Amodio, S., Strippoli, P., Canaider, S."
+  title:"An estimation of the number of cells in the human body"
+  id:"human-cells"
+  url:"doi: 10.3109/03014460.2013.807878"
+  venue: "Ann Hum Biol 2013; 40(6):463-71"
+  date:"2013"
+/], and with 7,800,000,000 (7.8 billion, 2020) people on Earth, that's less than 1/2 mole of human cells[/li]
+[li]if one mole of dollars were divided equally among each of the 
+7.8 billion people of Earth, and if a person counted their bills at the rate of one per second, it would take almost 2.5 million years to complete the task[/li]
+[/ul]
+
+[p]
+Just too big to grasp.
+[/p]
+
+
+#### The standard unit of abundance
+
+[p]
+The mole (***mol***) is one of the seven fundamental units in the International System of Units (*Système international d'unités* or **SI**). 
+[/p]
+
+[p]
+It previously was defined as the number of atoms in 0.012 kg of carbon-12 (Avogadro's Number, named for the early 19th 
+century Italian scientist Amedeo Avogadro).
+[/p]
+
+[p]
+But the kilogram was re-defined and so was the number of items in a mole.
+[/p]
+
+[p]
+On 20 May 2019, one mole was defined officially as the amount of a substance with exactly 6.02214076 × 10[sup]23[/sup] things 
+-- compounds, molecules, ions, donuts...
+[/p]
+
+// [HACK] Don't know why, but need the following p or else rendering of next p doesn't respect the style (as in other cases above)
+[p style:`{fontSize: "0.78rem"}`]
+[/p]
+[p style:`{fontSize: "0.78rem"}`]
+\[FYI, 23 October, between 6:02 AM and 6:02 PM (6:02 10/23 in some time-date formats) is [a href:"https://en.wikipedia.org/wiki/Mole_Day" ]Mole Day[/a].\]
+[/p]
+
+[div style: `{textAlign: 'center'}` ]
+[a className:"closePanelBtn" href:"#close-moles" onClick:`showContent_moles = false` ]Close Content[/a]
+[/div]
+
+[/div]
+
+[/Conditional]
+
+// ==============================
+
+// ***[Inline]Getting a value for \[H[sup]+[/sup]\][/Inline]***
+// ((((((((( Getting a value for \[H[sup]+[/sup]\] )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"getting-h-plus"]*Getting a value for \[H[sup]+[/sup]\]*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[p]
+\[H[sup]+[/sup]\] determines a solution's acidity and pH. We can yank it out of the K[sub]w[/sub] formula:
+[/p]
+
+[Equation display:true]
+  K_w = {[H^+][OH^-]}
+[/Equation]
+
+[p]
+We start with the fact that water is electrically neutral: *the positve charges from H[sup]+[/sup] must balance the negative charges from OH[sup]-[/sup]*.
+[/p]
+
+[p]
+That means the concentration of H[sup]+[/sup] ions equals the concentration of OH[sup]-[/sup] ions:
+[/p]
+
+[Equation display:true]
+  {[H^+] = [OH^-]}
+[/Equation]
+
+[p]
+Because the ion concentrations are equal, we can substitute \[H[sup]+[/sup]\] for \[OH[sup]-[/sup]\]:
+[/p]
+
+[aside][Inline]Plug in \[H[sup]+[/sup]\] for \[OH[sup]-[/sup]\][/Inline][/aside]
+
+[Equation display:true]
+  K_w = {[H^+]\color{red}[OH^-]} = {[H^+]\color{red}[H^+]}
+[/Equation]
+
+[p]
+Now some Algebra. Write the product of the \[H[sup]+[/sup]\] concentrations as a square:
+[/p]
+
+[aside][Inline]Just like [Equation display:false]x \cdot x = x^2[/Equation][/Inline][/aside]
+
+[Equation display:true]
+  K_w = {[H^+][H^+]} = {[H^+]^2}
+[/Equation]
+
+[p]
+Exchange the two members, just because we're used to the unknown on the left:
+[/p]
+
+[aside][Inline]Switch sides[/Inline][/aside]
+
+[Equation display:true]
+  {[H^+]^2} = K_w
+[/Equation]
+
+[p]
+And take the square root of both sides to get an expression for \[H[sup]+[/sup]\]:
+[/p]
+
+[aside][Inline][Equation display:false]\sqrt{K_w}[/Equation] is written as 
+[Equation display:false]{K_w}^{1/2}[/Equation] in some sources. A quantity to the one-half power is the same as its square root.[/Inline][/aside]
+
+[Equation display:true]
+  {[H^+]} = \sqrt{K_w}
+[/Equation]
+
+[p]
+\[H[sup]+[/sup]\], the concentration of H[sup]+[/sup] ions in moles per liter (*mol/L*), is a measure of a solution's acidity. We're close to turning that into pH, but we 
+first need K[sub]w[/sub].
+[/p]
+
+
+// ((((((((( Getting values for K[sub]w[/sub] )))))))))
+[div style:`{marginTop: '35px'}`]
+[Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"getting-kw"]*Getting values for K[sub]w[/sub]*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+[/div]
+
+[p]K[sub]w[/sub] can be measured experimentally. We don't need the details of how that's done, we just need those K[sub]w[/sub] values to convert to pH.[/p]
+
+[p]
+K[sub]w[/sub] depends on temperature, pressure, and dissolved substances (*i.e.*, salinity). The pressure effect is relatively 
+small so we'll stick with sea-level pressure.
+[/p]
+
+[p]
+Formulae have been developed that give K[sub]w[/sub] as a function of temperature and salinity. We'll first focus on temperature dependence.
+[/p]
+
+[p]
+Get an idea of the temperature effect on K[sub]w[/sub] and **[span style:`{color:'green'}`]\[H[sup]+[/sup]\][/span]** by playing with the slider.
+[/p]
+
+// *********************** //
+// ****** Kw & temp ****** //
+// *********************** //
+
+[div className:"dynamic-module" ]
+
+[div className: 'yellow-panel-div']
+
+[var name: 'tempInC_kw' value: 15 /]
+[derived name: temp_kw value: `273.15 + tempInC_kw` /]
+
+[Inline]
+[var name:"tempUnits_kw" value:"° C" /]
+[span style:`{marginLeft: '145px'}` ]Temperature [Range value: tempInC_kw min: 4 max: 40 step: 0.1 /][/span]
+// Derive temperature value based on units selection
+[derived name: tempForSelectedUnits_kw value: `tempUnits_kw === '° C' ? tempInC_kw : 32 + 9 * tempInC_kw / 5` /]
+[/Inline]
+
+[Inline]
+[Display value: tempForSelectedUnits_kw format:".1f" /] 
+[Select style:`{marginRight: "40px"}` value:tempUnits_kw options:`["° C", "° F"]`  /]
+[/Inline]
+
+[var name: 'sal_kw' value: 0 /]
+// [Inline]
+// Salinity [Range value: sal_kw min: 0 max: 40 step: 0.1 /]
+// [Display value: sal_kw format:".1f" /]‰
+// [/Inline]
+// [/div]
+
+
+[derived name: temp_kw value: `273.15 + tempInC_kw` /]
+// calcKwMehrbach(temp, sal)
+[derived name: expSum value: `(148.9652 - 13847.26 / temp_kw) - 23.6521 * Math.log(temp_kw) +
+    (-5.977 + 118.67 / temp_kw + 1.0495 * Math.log(temp_kw)) * Math.sqrt(sal_kw) - 0.01615 * sal_kw`/]
+// => expSum = [Display value: expSum/]
+[derived name: kw_1 value: `Math.exp(expSum)` /]
+// => Kw = [Display value: kw_1 format: '.5e' /]
+
+[derived name: sqrt_kw_1 value: `Math.sqrt(Math.exp(expSum))` /]
+// sqrtKw = [Display value: sqrt_kw_1 format: '.3r' /]
+
+[derived name: thePh value: `-Math.log10(sqrt_kw_1)` /]
+// thePh = [Display value:thePh format: '.6r' /]
+
+  [div style:`{marginLeft: '0px'}` ]
+
+  [p style:`{marginLeft:'153px'}`]
+    **[span style:`{color:'green'}` ]\[H[sup]+[/sup]\][/span]** = √K[sub]w[/sub]
+  [/p]
+
+  [p style:`{marginLeft:'190px'}`]
+   = √([Display value: kw_1 format: '.3r' /] mol[sup]2[/sup]/L[sup]2[/sup])
+  [/p]
+
+  [p style:`{marginLeft:'190px'}`]
+   = **[span style:`{color:'green'}` ][Display value: sqrt_kw_1 format: '.7r' /] mol/L[/span]**
+  [/p]
+
+  [p style:`{marginLeft:'190px'}`]
+  //  **[span style:`{color:'green'}` ][Display value: sqrt_kw_1 format: '.7r' /] mol/L[/span]** (or [Display value: `sqrt_kw_1.toString().split('e')[0].slice(0, 5)` format: '.3e' /]
+  //  [span style:`{fontSize:'0.75rem'}`]x[/span]10[sup][Display value: `sqrt_kw_1.toString().split('e')[1]` format: '.3e' /][/sup])
+  [/p]
+
+  [/div]
+  [/div]
+[/div]
+
+[p]
+Note that, as you increase the temperature, K[sub]w[/sub] and \[H[sup]+[/sup]\] increase.
+[/p]
+
+[aside][Inline]*Acids* are proton donors -- they produce H[sup]+[/sup] in solution. Water does that, so it's an acid. Water also produces
+ OH[sup]-[/sup], so it's a *base*, too.[/Inline][/aside]
+
+[p]
+The reason: Higher temperatures drive the reaction to the right, increasing the dissociation of water...
+[/p]
+
+[Equation display:true]
+  H_2O \leftrightarrows {H^+} + {OH^-}
+[/Equation]
+
+[p]
+...and that produces higher concentrations of H[sup]+[/sup] (and OH[sup]-[/sup]).
+[/p]
+
+[p]
+Fair enough, but those \[H[sup]+[/sup]\] numbers look too impractical to work with. We deal with that in the next section and finallly get to pH.
+[/p]
+
+[div className: 'section-summary']
+
+  [h4]Summary: Chem Primer[/h4]
+
+  [ul]
+    [li] become familiar with **water's dissociation** into ions [/li]
+    [li] describe the concept of **dynamic equilibrium** [/li]
+    [li] define an **equilibrium constant** [/li]
+  [/ul]
+[/div]
+
+[hr className:'section-hr' id:'ph-and-beyond' /]
+
+[Inline] [h4 style:`{display: 'inline', marginRight: '30px', marginBottom: '0px', paddingBottom:'0px'}` id:"refs"] [/h4] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+
+[Cite.References/]
