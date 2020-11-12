@@ -239,3 +239,10 @@ small span {
 .article-header {
   margin-bottom: 2em;
 }
+
+/* left, earlier chapter; right, next chapter */
+.nav-between-chapters {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+}
