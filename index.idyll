@@ -1,17 +1,5 @@
 [meta title:"WQ ToolBox - pH Part 2" description:"" /]
 
-
-// #### *"Water, water everywhere..."*
-// [Header
-//   fullWidth:true
-//   title:"WQ ToolBox Manual"
-//   subtitle:"pH II: Quick-o Water Chem Primer"
-//   authorLink:""
-//   date:``
-//   background:"url('static/images/h2o.jpg')"
-//   color:"navy"
-//    /]
-
 [Header
   fullWidth:true
   title:"WQ ToolBox Manual"
@@ -22,76 +10,19 @@
   color:"white"
    /]
 
-[p style: `{fontSize: '0.90rem'}` ]
- *This document was developed with* [a href:"https://idyll-lang.org/"]Idyll[/a], *a "toolkit for creating data-driven stories 
- and explorable explanations". Custom components were built with* [a href:"https://reactjs.org/"]React[/a] *and*  [a href:"https://d3js.org/"]D3[/a].
-[/p]
-
-[p style:`{textAlign:'right'}`]
-  contact [a href:'mailto: aquacalc@gmail.com']aquacalc@gmail.com[/a]
-[/p]
-
-    // [p style:`{textAlign:'right', paddingTop:'0px', marginTop:'0px', fontSize:'small'}`]
-    // *H[sub]2[/sub]O* image by [a href:"https://pixabay.com/users/publicdomainpictures-14/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=316625"]PublicDomainPictures[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=316625"]Pixabay[/a]
-    // [/p]
-
-// ((((((((( More than Just the Basics )))))))))
-// [div style:`{textAlign:'center', marginBottom:'15px'}`]
-// [Inline] [h2 style:`{display: 'inline', marginRight: '30px'}` id:"goals-toc-2"]*A Quick-o Chem Primer*[/h2] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
-// [/div]
-
-
-[div style:`{background: '#F5F5DC', borderRadius: '15px', padding: '15px', textAlign:'center', marginTop:'0px', paddingTop:'2px', marginBottom:'18px'}`]
-[h3 id:"top"]Table of Contents[/h3]
-[ul style:`{listStyleType:'none', marginTop:'0px'}`]
-
-// [var name:"showContent_toc_2" value:true /]
-// [div]
-// [Button className: 'showToc' onClick:`showContent_toc_2 = !showContent_toc_2` ]
-//   [Display value:`showContent_toc_2 ? 'Close A Quick-o Chem Primer' : 'A Quick-o Chem Primer' ` /]
-// [/Button]
-// [Conditional if:`showContent_toc_2`]
-//   [li][/li]
-  [ul className: 'ulToc']
-    [li] [a href:"#section-goals"]Section Goals[/a] [/li]
-    [li] [a href:"#section-intro-2"]Section Intro[/a] [/li]
-    [li] [a href:"#dissociate-ions"]Dissociation into ions[/a] [/li]
-    [li] [a href:"#dynamic-equilibriun"]Dynamic ⇆ equilibrium[/a] [/li]
-    [li] [a href:"#dissociation-constant"]K[sub]w[/sub]: Water’s dissociation constant[/a] [/li]
-    [li] [a href:"#simplified-kw"]The simplified K[sub]w[/sub] expression[/a] [/li]
-    [li] [a href:"#getting-h-plus"]Getting a value for \[H[sup]+[/sup]\][/a] [/li]
-    [li] [a href:"#getting-kw"]Getting values for K[sub]w[/sub][/a] [/li]
-    [li] [a href:"#refs"]Refs[/a] [/li]
-  [/ul]
-//   [/Conditional]
-// [/div]
-
-[/ul]
-[/div]
-
-[div className: 'section-preface']
-  [div style:`{textAlign:'center', marginTop:'15px'}`]
-  [Inline] [h2 style:`{display: 'inline', marginRight: '30px'}` id:"section-goals"]*Quick-o Chem Primer*[/h2] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
-  [/div]
-
-  // [h4]Section Goals[/h4]
-
-  [ul]
-    [li] become familiar with **water's dissociation** into H[sub]3[/sub]O[sup]+[/sup] & OH[sup]-[/sup] [/li]
-    [li] describe **dynamic equilibrium** and give an example [/li]
-    [li] write the expression for water's **equilibrium constant** [/li]
-    [li] understand how water's **equilibrium constant relates to pH** [/li]
-    [li] develop a vocabulary of common **water chemistry terms** [/li]
-    [li] describe how **concentration & activity** relate to popcorn [/li]
-    [li] explain what a **mole** is and why we use it [/li]
-  [/ul]
-[/div]
-
-
 // ((((((((( INTRO )))))))))
 [div style:`{marginTop:'15px'}` ]
 [Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"section-intro-2"]*Section Intro*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
 [/div]
+
+[aside]
+  [Inline]
+    ![h2o](static/images/h2o.jpg)
+    [p style:`{textAlign:'right', paddingTop:'0px', marginTop:'0px', paddingBottom:'0px', marginBottom:'0px', fontSize:'0.75rem'}`]
+    Image by [a href:"https://pixabay.com/users/publicdomainpictures-14/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=316625"]PublicDomainPictures[/a] from [a href:"https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=316625"]Pixabay[/a]
+    [/p]
+  [/Inline]
+[/aside]
 
 [p]
 A better understanding of pH starts with the behavior of water molecules.
@@ -105,6 +36,59 @@ Each is made of two hydrogen atoms bound to one oxygen atom and is symbolized by
 The following discussion deals with pure water -- no dissolved solids, no dissolved gasses, no fish, no shrimp, no plants...*only* H[sub]2[/sub]O, the 
 foundation of water-quality management. (Salinity effects are mentioned in a few places below, but that topic and the others are taken up in other sections.)
 [/p]
+
+[p]
+Becoming familiar with this material will give you a much better understanding of important features of pH discussed in the next section 
+-- such as how small pH changes represent large changes in acidity, the proper way to average pH values, and which pH scales must 
+be applied when working with seawater.
+[/p]
+
+[p style: `{fontSize: '0.90rem'}` ]
+ *This document was developed with* [a href:"https://idyll-lang.org/"]Idyll[/a], *a "toolkit for creating data-driven stories 
+ and explorable explanations". Custom components were built with* [a href:"https://reactjs.org/"]React[/a] *and*  [a href:"https://d3js.org/"]D3[/a].
+[/p]
+
+[p style:`{textAlign:'right'}`]
+  contact [a href:'mailto: aquacalc@gmail.com']aquacalc@gmail.com[/a]
+[/p]
+
+
+[div style:`{background: '#F5F5DC', borderRadius: '15px', padding: '15px', textAlign:'center', marginTop:'0px', paddingTop:'2px', marginBottom:'18px'}`]
+[h3 id:"top"]Table of Contents[/h3]
+[ul style:`{listStyleType:'none', marginTop:'0px'}`]
+
+  [ul className: 'ulToc']
+    [li] [a href:"#section-intro-2"]Section Intro[/a] [/li]
+    [li] [a href:"#section-goals"]Section Goals[/a] [/li]
+    [li] [a href:"#dissociate-ions"]Dissociation into ions[/a] [/li]
+    [li] [a href:"#dynamic-equilibriun"]Dynamic ⇆ equilibrium[/a] [/li]
+    [li] [a href:"#dissociation-constant"]K[sub]w[/sub]: Water’s dissociation constant[/a] [/li]
+    [li] [a href:"#simplified-kw"]The simplified K[sub]w[/sub] expression[/a] [/li]
+    [li] [a href:"#getting-h-plus"]Getting a value for \[H[sup]+[/sup]\][/a] [/li]
+    [li] [a href:"#getting-kw"]Getting values for K[sub]w[/sub][/a] [/li]
+    [li] [a href:"#refs"]Refs[/a] [/li]
+  [/ul]
+
+[/ul]
+[/div]
+
+// SECTION GOALS
+
+[div className: 'section-preface']
+  [div style:`{textAlign:'center', marginTop:'15px'}`]
+  [Inline] [h2 style:`{display: 'inline', marginRight: '30px'}` id:"section-goals"]*Quick-o Chem Primer*[/h2] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
+  [/div]
+
+  [ul]
+    [li] become familiar with **water's dissociation** into H[sub]3[/sub]O[sup]+[/sup] & OH[sup]-[/sup] [/li]
+    [li] describe **dynamic equilibrium** and give an example [/li]
+    [li] write the expression for water's **equilibrium constant** [/li]
+    [li] understand how water's **equilibrium constant relates to pH** [/li]
+    [li] develop a vocabulary of common **water chemistry terms** [/li]
+    [li] describe how **concentration & activity** relate to popcorn [/li]
+    [li] explain what a **mole** is and why we use it [/li]
+  [/ul]
+[/div]
 
 // ### *Dissociation into ions*
 
@@ -138,11 +122,16 @@ off, all that remains is the positively charged ***proton***.
 [/aside]
 
 [p]
-For our purposes, no important details are lost by representing  H[sub]3[/sub]O[sup]+[/sup] as H[sup]+[/sup] (a *hydron* or, more commonly, a ***proton***).
+For our purposes, no important details are lost by representing...
 [/p]
 
+[ul]
+  [li] ...H[sub]3[/sub]O[sup]+[/sup] as H[sup]+[/sup] (a *hydron* or, more commonly, a ***proton***) [/li]
+  [li] ...self-dissociation of one H[sub]2[/sub]O molecule instead of the reaction of two [/li]
+[/ul]
+
 [p]
-This simplifies the reaction to
+That simplifies the reaction to
 [/p]
 
 [Equation display:true]
@@ -169,7 +158,7 @@ When temperature is constant, the reaction reaches a ***dynamic equilibrium***:
 [/p]
 
 [ul]
-[li]***dynamic*** (as opposed to static), because the reaction doesn't stop -- water molecules still break up, driving the reaction to the right, 
+[li]***dynamic*** (as opposed to static), because the reaction doesn't stop -- water molecules still break up, driving the reaction to the right 
 while ions still combine, driving the reaction to the left[/li]
 // [p]and[/p]
 [li]***equilibrium*** (or *steady state*), because the reaction rates are constant -- and that means that the concentration of each component is constant[/li]
@@ -186,11 +175,13 @@ Before defining pH, we need a short detour to equilibrium constants.
 [/aside]
 
 [p]
-An equilibrium constant is the ratio of the products of a chemical reaction to the reactants *after the reaction has reached dynamic equilibrium*.
+An equilibrium constant is the ratio of the [span style:`{color:'green'}` ]products[/span] of a chemical reaction to the 
+[span style:`{color:'blue'}` ]reactants[/span] *after the reaction has reached dynamic equilibrium*.
 [/p]
 
 [p]
-In the general case, if reactants A and B combine to produce C and D
+In the general case, if reactants [span style:`{color:'blue'}` ]A[/span] and [span style:`{color:'blue'}` ]B[/span] combine to produce 
+[span style:`{color:'green'}` ]C[/span] and [span style:`{color:'green'}` ]D[/span]
 [/p]
 
 [Equation display:true]
@@ -202,7 +193,7 @@ then the equilibrium constant K is
 [/p]
 
 [Equation display:true]
-  K = \dfrac{\color{green}\lbrace{C}\rbrace\color{green}\lbrace{D}\rbrace}{\color{blue}\lbrace{A}\rbrace\color{blue}\lbrace{B}\rbrace}
+  K = \dfrac{\color{green}products}{\color{blue}reactants} = \dfrac{\color{green}\lbrace{C}\rbrace\color{green}\lbrace{D}\rbrace}{\color{blue}\lbrace{A}\rbrace\color{blue}\lbrace{B}\rbrace}
 [/Equation]
 
 [p]
@@ -237,7 +228,7 @@ In chemistry, activity is not the same as concentration. Two simplifications wil
 [/p]
 
 [p]
-First, the activity of water is given as 1.0, so we can simplify the formula as
+First, the activity of water is given as 1.0, so we can simplify the formula to
 [/p]
 
 [Equation display:true]
@@ -245,8 +236,8 @@ First, the activity of water is given as 1.0, so we can simplify the formula as
 [/Equation]
 
 [p]
-Next, the difference between activity and concentration generally is small enough in dilute solutions -- those in which we're interested -- that we 
-can use concentration without introducting unacceptable error. This leads to
+Next, the difference between activity and concentration generally is small enough in dilute solutions -- those in which we're interested -- so that we 
+can use concentration without introducing unacceptable error. This leads to
 [/p]
 
 [Equation display:true]
@@ -365,7 +356,7 @@ We still need to be aware that the chemical properties of real solutions are bet
   [/ul]
 
 [p]
-We'll mention activity again when we define pH because pH strictly is defined in terms of activity, not concentration; and we go into a bit more detail 
+We'll mention activity again shortly when we define pH because pH strictly is defined in terms of activity, not concentration; and we go into a bit more detail 
 farther along when we discuss pH scales and measuring pH in seawater. 
 [/p]
 
@@ -588,15 +579,19 @@ On 20 May 2019, one mole was defined officially as the amount of a substance wit
 [/div]
 
 [p]
-\[H[sup]+[/sup]\] determines a solution's acidity and pH. We can yank it out of the K[sub]w[/sub] formula:
+\[H[sup]+[/sup]\] determines a solution's acidity and we can yank it out of the K[sub]w[/sub] formula:
 [/p]
 
 [Equation display:true]
   K_w = {[H^+][OH^-]}
 [/Equation]
 
-[p]
-We start with the fact that water is electrically neutral: *the positve charges from H[sup]+[/sup] must balance the negative charges from OH[sup]-[/sup]*.
+[p style:`{marginBottom:'0px'}` ]
+We start with the fact that water is electrically neutral. In other words:
+[/p]
+
+[p style:`{textAlign:'center'}` ]
+**the positve charges from H[sup]+[/sup] must balance the negative charges from OH[sup]-[/sup]**
 [/p]
 
 [p]
@@ -649,8 +644,8 @@ And take the square root of both sides to get an expression for \[H[sup]+[/sup]\
 [/Equation]
 
 [p]
-\[H[sup]+[/sup]\], the concentration of H[sup]+[/sup] ions in moles per liter (*mol/L*), is a measure of a solution's acidity. We're close to turning that into pH, but we 
-first need K[sub]w[/sub].
+\[H[sup]+[/sup]\], the concentration of H[sup]+[/sup] ions in moles per liter (*mol/L*), measures a solution's acidity. We're close to turning that into pH, but 
+let's first get some K[sub]w[/sub] values to illustrate how this is done.
 [/p]
 
 
@@ -659,7 +654,7 @@ first need K[sub]w[/sub].
 [Inline] [h3 style:`{display: 'inline', marginRight: '30px'}` id:"getting-kw"]*Getting values for K[sub]w[/sub]*[/h3] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
 [/div]
 
-[p]K[sub]w[/sub] can be measured experimentally. We don't need the details of how that's done, we just need those K[sub]w[/sub] values to convert to pH.[/p]
+[p]K[sub]w[/sub] can be measured experimentally. We don't need the details of how that's done, we just need some K[sub]w[/sub] values to play with.[/p]
 
 [p]
 K[sub]w[/sub] depends on temperature, pressure, and dissolved substances (*i.e.*, salinity). The pressure effect is relatively 
@@ -667,7 +662,7 @@ small so we'll stick with sea-level pressure.
 [/p]
 
 [p]
-Formulae have been developed that give K[sub]w[/sub] as a function of temperature and salinity. We'll first focus on temperature dependence.
+Formulae that give K[sub]w[/sub] as a function of temperature and salinity have been developed. We'll first focus on temperature dependence.
 [/p]
 
 [p]
@@ -758,11 +753,12 @@ The reason: Higher temperatures drive the reaction to the right, increasing the 
 [/Equation]
 
 [p]
-...and that produces higher concentrations of H[sup]+[/sup] (and OH[sup]-[/sup]).
+...and producing higher concentrations of H[sup]+[/sup] (and OH[sup]-[/sup]).
 [/p]
 
 [p]
-Fair enough, but those \[H[sup]+[/sup]\] numbers look too impractical to work with. We deal with that in the next section and finallly get to pH.
+Fair enough, but those \[H[sup]+[/sup]\] numbers are filled with so many zeros that, as-is, they're impractical to work with. We deal with 
+that in the next section when we finallly get to pH.
 [/p]
 
 [div className: 'section-summary']
@@ -774,7 +770,7 @@ Fair enough, but those \[H[sup]+[/sup]\] numbers look too impractical to work wi
     [li] **higher temperature causes greater dissociation** [/li]
     [li] **dynamic equilibrium** is reached at constant temperature [/li]
     [li] **ionic concentrations are constant** at dynamic equilibrium [/li]
-    [li] **activity** measures a dissolved properties better than concentration [/li]
+    [li] **activity** measures dissolved properties better than concentration [/li]
     [li] a substance's **activity** is less than its concentration [/li]
     [li] a **mole** is a collection of 6.02214076 x 10[sup]23[/sup] items [/li]
     [li] **moles/L** is the most common way to express chemical quantities [/li]
