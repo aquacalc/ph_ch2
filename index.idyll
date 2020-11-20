@@ -444,28 +444,34 @@ Image by [a href:"https://pixabay.com/users/beeki-2666/?utm_source=link-attribut
 
 #### Why do we need moles?
 [p]
-Chemical reactions describe how substances interact in terms of their numbers.
+Chemical reactions describe how substances interact in terms of the *numbers* of their reactants and products.
 [/p]
 
 [p]
-For example, ***one*** molecule of sodium carbonate dissolved in water produces ***two*** sodium ions and ***one*** carbonate ion:
+For example, ***[span style:`{color:'blue'}` ]one[/span]*** molecule of sodium carbonate dissolved in water produces ***[span style:`{color:'blue'}` ]two[/pan]*** sodium ions and ***[span style:`{color:'blue'}` ]one[/span]*** carbonate ion:
 [/p]
 
 [Equation display:true]
-  Na_2CO_3 \leftrightarrows {2Na^+} + {CO_3^{-2}}
+  \color{blue}{1}\color{black}Na_2CO_3 \leftrightarrows {\color{blue}{2}\color{black}Na^+} + \color{blue}{1}\color{black}{CO_3^{-2}}
 [/Equation]
 
 [p]
-Similarly, ***one*** molecule of H[sub]2[/sub]O produces ***one*** H[sup]+[/sup] and ***one*** OH[sup]-[/sup]:
+Similarly, ***[span style:`{color:'green'}` ]one[/span]*** molecule of H[sub]2[/sub]O produces ***[span style:`{color:'green'}` ]one[/span]*** 
+H[sup]+[/sup] and ***[span style:`{color:'green'}` ]one[/span]*** OH[sup]-[/sup]:
 [/p]
 
 [Equation display:true]
-  H_2O \leftrightarrows {H^+} + {OH^-}
+  \color{green}{1}\color{black}H_2O \leftrightarrows \color{green}{1}\color{black}{H^+} + \color{green}{1}\color{black}{OH^-}
 [/Equation]
 
 [p]
-And ***five dozen*** H[sub]2[/sub]O molecules produce ***five dozen*** H[sup]+[/sup] and ***five dozen*** OH[sup]-[/sup].
+And ***[span style:`{color:'green'}` ]5 dozen (60)[/span]*** H[sub]2[/sub]O molecules produce ***[span style:`{color:'green'}` ]5 dozen[/span]*** H[sup]+[/sup] and 
+***[span style:`{color:'green'}` ]5 dozen[/span]*** OH[sup]-[/sup].
 [/p]
+
+[Equation display:true]
+  \color{green}{60}\color{black}H_2O \leftrightarrows \color{green}{60}\color{black}{H^+} + \color{green}{60}\color{black}{OH^-}
+[/Equation]
 
 [p]
 But molecules and ions are so physically small that such small quantities aren't practical in water-quality management.
