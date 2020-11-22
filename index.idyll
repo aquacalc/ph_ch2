@@ -192,7 +192,11 @@ In the general case, if reactants [span style:`{color:'blue'}` ]A[/span] and [sp
 [/p]
 
 [Equation display:true]
-  \color{blue}A + \color{blue}B \leftrightarrows \color{green}C + \color{green}D
+  \color{blue}reactants \color{black}\leftrightarrows \color{green}products
+[/Equation]
+
+[Equation display:true]
+  \color{blue}A + \color{blue}B \color{black}\leftrightarrows \color{green}C + \color{green}D
 [/Equation]
 
 [p]
@@ -347,6 +351,29 @@ Just like the real number of popped kernels *is less than* the total number of k
 *is less than* the amount of substance added to the solution.
 [/p]
 
+// [p]
+// not available for reaction
+// a measurable effect
+// deviation...adjust...calculated by multiplying the concentration of a solute by an “activity coefficient”, usually symbolized γ, to give a quantity that more accurately represents 
+// the intensity of the chemical properties of the solute than the concentration itself does:
+// [/p]
+
+// calculated by multiplying the concentration of a solute by an “activity coefficient”, usually symbolized γ, to give a quantity that more accurately represents 
+// the intensity of the chemical properties of the solute than the concentration itself does:
+
+// [Equation display:true]
+//   {pH} = -\log_{10}(\alpha_{H^+})
+// [/Equation]
+
+// [Equation display:true]
+//   {\alpha} = 
+//   \gamma{C}
+// [/Equation]
+
+// [p]
+// Thus, the *effective concentration* -- the number of free ions in solution -- is l
+// [/p]
+
 [p]
 Concentration is close enough to activity in dilute solutions of the type we run in aquaculture, aquaponics, pool, hydroponics, and aquarium work that we generally 
 can use concentration without unacceptable loss of accuracy or precision.
@@ -466,7 +493,7 @@ H[sup]+[/sup] and ***[span style:`{color:'green'}` ]one[/span]*** OH[sup]-[/sup]
 
 [p]
 And ***[span style:`{color:'green'}` ]5 dozen (60)[/span]*** H[sub]2[/sub]O molecules produce ***[span style:`{color:'green'}` ]5 dozen[/span]*** H[sup]+[/sup] and 
-***[span style:`{color:'green'}` ]5 dozen[/span]*** OH[sup]-[/sup].
+***[span style:`{color:'green'}` ]5 dozen[/span]*** OH[sup]-[/sup]:
 [/p]
 
 [Equation display:true]
