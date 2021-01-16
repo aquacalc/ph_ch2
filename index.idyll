@@ -40,7 +40,7 @@ foundation of water-quality management. (Salinity effects are mentioned in a few
 [p]
 Becoming familiar with this material will give you a much better understanding of important features of pH discussed in the next section 
 -- such as how small pH changes represent large changes in acidity, the proper way to average pH values, and which pH scales must 
-be applied when working with seawater.
+be used when working with seawater.
 [/p]
 
 [p style: `{fontSize: '0.90rem'}` ]
@@ -60,13 +60,88 @@ be applied when working with seawater.
 [/p]
 
 
-[div style:`{background: '#F5F5DC', borderRadius: '15px', padding: '15px', textAlign:'center', marginTop:'0px', paddingTop:'2px', marginBottom:'18px'}`]
+// ** KEY POINTS ** //
+[div className: 'key-take-aways']
+
+  [h3]Key Take-aways[/h3]
+
+  [h4]Water Dissociation[/h4]
+  [ul]
+    [li] **water dissociates** into equal amounts of H[sub]3[/sub]O[sup]+[/sup] (or H[sup]+[/sup]) & OH[sup]-[/sup] [/li]
+    [li] **H[sub]3[/sub]O[sup]+[/sup] always equals OH[sup]-[/sup]**, so water always is electrically neutral [/li]
+    [li] **higher temperature** drives **greater dissociation** [/li]
+    [li] greater dissociation produces **more H[sub]3[/sub]O[sup]+[/sup]** & OH[sup]-[/sup] [/li]
+  [/ul]
+
+  [h4]Dynamic Equilibrium[/h4]
+  [ul]
+    [li] dissociation reaches **dynamic equilibrium** at constant temperature [/li]
+    [li] at that point, **reaction rates are equal & concentrations constant** [/li]
+  [/ul]
+
+  [h4]Activity *vs.* Concentration [/h4]
+  [ul]
+    [li] **concentration** is the amount of a substance ignoring interactions [/li]
+    [li] **activity** is the amount of a substance accounting for interactions [/li]
+    [li] **activity almost equals concentration in dilute solutions** [/li]
+    [li] activity is important for **precise water-quality management** [/li]
+    [li] activity is **particularly important when working with seawater** [/li]
+  [/ul]
+
+  [h4]Moles[/h4]
+  [ul]
+    [li] **a mole is a very large collection of items** (> 600 trillion) [/li]
+    [li] **mol/L** (M, molarity) & **mol/kg** (m, molality) are the more[br/]common ways of expressing chemical quantities [/li]
+  [/ul]
+
+[/div]
+
+// ** KEY TERMS ** //
+[div className: 'key-terms']
+
+  [h3]Key Terms[/h3]
+
+  [h4]Ions[/h4]
+  [ul]
+    [li] **cation** -- an ion with a positive charge, like H[sup]+[/sup] or Ca[sup]+2[/sup] [/li]
+    [li] **anion** -- an ion with a negative charge, like OH[sup]-[/sup] or Cl[sup]-[/sup] [/li]
+    [li] **hydronium ion** -- the fancy name for H[sub]3[/sub]O[sup]+[/sup] [/li]
+    [li] **hydroxide ion** -- the fancy name for OH[sup]-[/sup] [/li]
+    [li] **proton** -- the ionized hydrogen ion, H[sup]+[/sup] [/li]
+  [/ul]
+
+  [h4]Equilibrium[/h4]
+  [ul]
+    [li] **dynamic equilibrium** (*steady state*) -- condition reached when reaction rates are equal and the concentrations of all reactants and 
+    products remain unchanged [/li]
+    [li] **equilibrium constant** (*dissociation constant*) -- the ratio of the products to the reactants in a chemical reaction at steady state [/li]
+  [/ul]
+
+  [h4]Concentration & Activity[/h4]
+  [ul]
+    [li] **concentration** -- the familiar measure for the amount of a substance per unit volume (or per unit mass); an *ideal* measure that assumes that the 
+    entire amount of a substance is available for reaction [/li]
+    [li] **activity** (*effective concentration*) -- the amount of a substance per unit volume (or per unit mass) available for reaction after accounting for
+    the fraction involved in interactions with other dissolved substances [/li]
+  [/ul]
+
+  [h4]Cheaper by the Mole[/h4]
+  [ul]
+    [li] **mole** (*mol*) -- like a pair (a collection of two) and a dozen (a collection of 12), a mole is a collection of items: more 
+    than *six hundred trillion* items; the standard way to measure element, molecules, & ions [/li]
+  [/ul]
+
+[/div]
+
+
+[div className: 'table-of-contents']
+// [div style:`{background: '#F5F5DC', borderRadius: '15px', padding: '15px', textAlign:'center', marginTop:'0px', paddingTop:'2px', marginBottom:'18px'}`]
 [h3 id:"top"]Table of Contents[/h3]
 [ul style:`{listStyleType:'none', marginTop:'0px'}`]
 
   [ul className: 'ulToc']
-    [li] [a href:"#section-intro-2"]Section Intro[/a] [/li]
-    [li] [a href:"#section-goals"]Section Goals[/a] [/li]
+    // [li] [a href:"#section-intro-2"]Section Intro[/a] [/li]
+    // [li] [a href:"#section-goals"]Section Goals[/a] [/li]
     [li] [a href:"#dissociate-ions"]Dissociation into ions[/a] [/li]
     [li] [a href:"#dynamic-equilibriun"]Dynamic ⇆ equilibrium[/a] [/li]
     [li] [a href:"#dissociation-constant"]K[sub]w[/sub]: Water’s dissociation constant[/a] [/li]
@@ -77,24 +152,6 @@ be applied when working with seawater.
   [/ul]
 
 [/ul]
-[/div]
-
-// SECTION GOALS
-
-[div className: 'section-preface']
-  [div style:`{textAlign:'center', marginTop:'15px'}`]
-  [Inline] [h2 style:`{display: 'inline', marginRight: '30px'}` id:"section-goals"]*Quick-o Chem Primer*[/h2] [span style:`{fontSize: '0.85rem'}`][a href:"#top" style:`{textDecoration: 'none'}`]\[TableOfContents\][/a][/span] [/Inline]
-  [/div]
-
-  [ul]
-    [li] become familiar with **water's dissociation** into H[sub]3[/sub]O[sup]+[/sup] & OH[sup]-[/sup] [/li]
-    [li] describe **dynamic equilibrium** and give an example [/li]
-    [li] write the expression for water's **equilibrium constant** [/li]
-    [li] understand how water's **equilibrium constant relates to pH** [/li]
-    [li] develop a vocabulary of common **water chemistry terms** [/li]
-    [li] describe how **concentration & activity** relate to popcorn [/li]
-    [li] explain what a **mole** is and why we use it [/li]
-  [/ul]
 [/div]
 
 // ### *Dissociation into ions*
@@ -108,8 +165,6 @@ be applied when working with seawater.
 [Inline]Charged chemical species -- like H[sub]3[/sub]O[sup]+[/sup] and OH[sup]-[/sup] -- are *ions*. Ions with a positive charge are ***cations***; 
 those with a negative charge are ***anions***.[/Inline]
 [/aside]
-
-njWsfApthXc
 
 [p]
 Two water molecules react to yield one H[sub]3[/sub]O[sup]+[/sup] and one OH[sup]-[/sup]:
@@ -290,7 +345,7 @@ The "wavy equals sign", [Equation display:false]\approx[/Equation], means "appro
 
 [p]Heat that bag in the microwave and, in the ideal case, all 750 kernels will pop. If they do, then we can say that the ***concentration*** of popcorn is 750/bag.[/p]
 
-[p]But in the real world, maybe only 700 pop. If so, then the ***effective concentration*** of popcorn is lower: only 700/bag.[/p]
+[p]But in the real world maybe only 700 of the 750 kernels pop. If so, then the ***effective concentration*** of popcorn is lower: only 700/bag.[/p]
 
 [p]Chemistry makes a similar distinction for dissolved substances.[/p]
 
@@ -349,8 +404,8 @@ The rest of the added substance -- 92% of 2.5, or 2.3 g/L -- is the effective co
 [h4 style:`{marginBottom:'2px'}`]The bottomline[/h4]
 
 [p]
-Just like the real number of popped kernels *is less than* the total number of kernels added to the bag, so the activity of a dissolved substance 
-*is less than* the amount of substance added to the solution.
+Just like the actual number of popped kernels *is less than* the total number of kernels added to the bag, so the activity of a dissolved substance 
+*is less than* the amount of substance in the solution.
 [/p]
 
 // [p]
@@ -632,8 +687,8 @@ On 20 May 2019, one mole was defined officially as the amount of a substance wit
 We start with the fact that water is electrically neutral. In other words:
 [/p]
 
-[p style:`{textAlign:'center'}` ]
-**the positve charges from H[sup]+[/sup] must balance the negative charges from OH[sup]-[/sup]**
+[p style:`{textAlign:'center', fontSize:'1.1rem', marginTop:'25px', marginBottom:'25px'}` ]
+**positve charges from H[sup]+[/sup] must balance negative charges from OH[sup]-[/sup]**
 [/p]
 
 [p]
@@ -780,7 +835,7 @@ Get an idea of the temperature effect on K[sub]w[/sub] and **[span style:`{color
 [/div]
 
 [p]
-Note that, as you increase the temperature, K[sub]w[/sub] and \[H[sup]+[/sup]\] increase.
+As temperature increases, note that K[sub]w[/sub] and \[H[sup]+[/sup]\] increase.
 [/p]
 
 [aside][Inline]*Acids* are proton donors -- they produce H[sup]+[/sup] in solution. Water does that, so it's an acid. Water also produces
@@ -799,8 +854,11 @@ The reason: Higher temperatures drive the reaction to the right, increasing the 
 [/p]
 
 [p]
-Fair enough, but those \[H[sup]+[/sup]\] numbers are filled with so many zeros that, as-is, they're impractical to work with. We deal with 
-that in the next section when we finally get to pH.
+Fair enough, but those \[H[sup]+[/sup]\] numbers are filled with so many zeros that, as-is, they're impractical to work with.
+[/p]
+
+[p]
+We deal with that in the next section where we finally get to pH.
 [/p]
 
 [div className: 'section-summary']
