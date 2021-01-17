@@ -70,7 +70,7 @@ be used when working with seawater.
     [li] **water dissociates** into equal amounts of H[sub]3[/sub]O[sup]+[/sup] (or H[sup]+[/sup]) & OH[sup]-[/sup] [/li]
     [li] **H[sub]3[/sub]O[sup]+[/sup] always equals OH[sup]-[/sup]**, so water always is electrically neutral [/li]
     [li] **higher temperature** drives **greater dissociation** [/li]
-    [li] greater dissociation produces **more H[sub]3[/sub]O[sup]+[/sup]** & OH[sup]-[/sup] [/li]
+    // [li] greater dissociation produces **more H[sub]3[/sub]O[sup]+[/sup]** & OH[sup]-[/sup] [/li]
   [/ul]
 
   [h4]Dynamic Equilibrium[/h4]
@@ -83,8 +83,8 @@ be used when working with seawater.
   [ul]
     [li] **concentration** is the amount of a substance ignoring interactions [/li]
     [li] **activity** is the amount of a substance accounting for interactions [/li]
-    [li] **activity almost equals concentration in dilute solutions** [/li]
-    [li] activity is important for **precise water-quality management** [/li]
+    // [li] **activity almost equals concentration in dilute solutions** [/li]
+    // [li] activity is important for **precise water-quality management** [/li]
     [li] activity is **particularly important when working with seawater** [/li]
   [/ul]
 
@@ -107,7 +107,7 @@ be used when working with seawater.
     [li] **anion** -- an ion with a negative charge, like OH[sup]-[/sup] or Cl[sup]-[/sup] [/li]
     [li] **hydronium ion** -- the fancy name for H[sub]3[/sub]O[sup]+[/sup] [/li]
     [li] **hydroxide ion** -- the fancy name for OH[sup]-[/sup] [/li]
-    [li] **proton** -- the ionized hydrogen ion, H[sup]+[/sup] [/li]
+    // [li] **proton** -- the ionized hydrogen ion, H[sup]+[/sup] [/li]
   [/ul]
 
   [h4]Equilibrium[/h4]
@@ -656,7 +656,7 @@ On 20 May 2019, one mole was defined officially as the amount of a substance wit
 [p style:`{fontSize: "0.78rem"}`]
 [/p]
 [p style:`{fontSize: "0.78rem"}`]
-\[FYI, 23 October, between 6:02 AM and 6:02 PM (6:02 10/23 in some time-date formats) is [a href:"https://en.wikipedia.org/wiki/Mole_Day" ]Mole Day[/a].\]
+\[FYI, 23 October, between 6:02 AM and 6:02 PM (6:02 10/23 in some time-date formats) is [a href:"https://en.wikipedia.org/wiki/Mole_Day" target:"_blank" rel:"noopener noreferrer" ]Mole Day[/a].\]
 [/p]
 
 [div style: `{textAlign: 'center'}` ]
