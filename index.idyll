@@ -56,7 +56,9 @@ be used when working with seawater.
 [/p]
 
 [p style:`{textAlign:'right'}`]
-  contact [a href:'mailto: aquacalc@protonmail.ch']aquacalc@protonmail.ch[/a]
+  contact [a href:'mailto: aquacalc@protonmail.ch'  
+                target:"_blank"
+                rel:"noopener noreferrer"]aquacalc@protonmail.ch[/a]
 [/p]
 
 
